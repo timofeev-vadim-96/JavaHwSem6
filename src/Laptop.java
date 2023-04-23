@@ -26,6 +26,6 @@ public class Laptop {
     }
     public String toString() {
         return String.format("price: %s, ram: %s, hardDiscCapacity: %s, OS: %s, " +
-                "company: %s, color: %s", price, ram, hardDiscCapacity, OS, company, color);
+                "company: %s, color: %s. ", price, ram, hardDiscCapacity, OS, company, color);
     }
 }
