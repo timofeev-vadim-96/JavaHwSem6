@@ -25,10 +25,6 @@ public class Main {
                 "2. ОЗУ\n" +
                 "3. Объем ЖД");
         int choice = scanner.nextInt();
-        if (choice != 1 && choice != 2 && choice != 3) {
-            System.out.println("Вы ввели не верный вариант фильтрации...");
-            return choice;
-        }
         return choice;
     }
 
@@ -45,24 +41,33 @@ public class Main {
     }
 
     public static void printLaptopsWithFilter(int userChoice, Map<String, Integer> filter) {
+        int counter = 0;
         if (userChoice == 1) {
             for (var item : laptops) {
                 if (filter.get("min") <= item.price && item.price <= filter.get("max")) {
                     System.out.println(item);
+                    counter++;
                 }
             }
         } else if (userChoice == 2) {
             for (var item : laptops) {
                 if (filter.get("min") <= item.ram && item.ram <= filter.get("max")) {
                     System.out.println(item);
+                    counter++;
                 }
             }
         } else if (userChoice == 3) {
             for (var item : laptops) {
                 if (filter.get("min") <= item.hardDiscCapacity && item.hardDiscCapacity <= filter.get("max")) {
                     System.out.println(item);
+                    counter++;
                 }
             }
+        } else{
+            System.out.println("Вы ввели неверный вариант фильтрации. ");
+        }
+        if (counter == 0){
+            System.out.println("Ноутбуки, удовлетворяющие введенные параметры, отсутствуют. ");
         }
     }
 
