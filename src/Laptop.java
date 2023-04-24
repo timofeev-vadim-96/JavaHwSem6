@@ -1,4 +1,5 @@
 public class Laptop {
+    public int id;
     public int price;
     public int ram;
     public int hardDiscCapacity;
@@ -6,7 +7,8 @@ public class Laptop {
     public String company;
     public String color;
 
-    public Laptop(int price, int ram, int hardDiscCapacity, String OS, String company, String color) {
+    public Laptop(int id, int price, int ram, int hardDiscCapacity, String OS, String company, String color) {
+        this.id = id;
         this.price = price;
         this.ram = ram;
         this.hardDiscCapacity = hardDiscCapacity;
@@ -16,7 +18,7 @@ public class Laptop {
     }
     public boolean equals(Object obj) {
         if (obj instanceof Laptop)
-            return ((Laptop)obj).price == (this.price) &&
+            return  ((Laptop)obj).price == (this.price) &&
                     ((Laptop)obj).ram == (this.ram) &&
                     ((Laptop)obj).hardDiscCapacity == (this.hardDiscCapacity) &&
                     ((Laptop)obj).OS.equals(this.OS) &&
@@ -25,7 +27,12 @@ public class Laptop {
         else return false;
     }
     public String toString() {
-        return String.format("price: %s, ram: %s, hardDiscCapacity: %s, OS: %s, " +
-                "company: %s, color: %s. ", price, ram, hardDiscCapacity, OS, company, color);
+        return String.format("id: %s, price: %s, ram: %s, hardDiscCapacity: %s, OS: %s, " +
+                "company: %s, color: %s. ",id, price, ram, hardDiscCapacity, OS, company, color);
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
     }
 }

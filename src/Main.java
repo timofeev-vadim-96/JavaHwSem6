@@ -10,12 +10,13 @@ public class Main {
     }
 
     private static void createSetOfLeptops() {
-        Laptop laptop1 = new Laptop(40123, 2000, 2_000_000, "Windows 10", "Asus", "Black");
-        Laptop laptop2 = new Laptop(35321, 3000, 1_000_000, "Linux", "Dell", "Grey");
-        Laptop laptop3 = new Laptop(37592, 2000, 1_000_000, "Windows 10", "HP", "White");
+        Laptop laptop1 = new Laptop(1, 40123, 2000, 2_000_000, "Windows 10", "Asus", "Black");
+        Laptop laptop2 = new Laptop(2, 35321, 3000, 1_000_000, "Linux", "Dell", "Grey");
+        Laptop laptop3 = new Laptop(3, 37592, 2000, 1_000_000, "Windows 10", "HP", "White");
         laptops.add(laptop1);
         laptops.add(laptop2);
         laptops.add(laptop3);
+        laptops.add(laptop1); // убеждаемся, что эквивалентные экземпляры класса не попадут в множество
     }
 
     private static int userMenu() {
